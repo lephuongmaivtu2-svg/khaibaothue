@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lightverse – Khai báo giao dịch</title>
+
+    <!-- PWA meta -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#1f5cff" />
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Lightverse" />
+    <link rel="apple-touch-icon" href="https://i.ibb.co/7SrxWGD/icon-180.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="header">
+        💬 Khai báo giao dịch – Lightverse
+      </header>
+
+      <main id="log" class="log">
+        <div class="bubble bubble-ai">
+          💡 Nhập mô tả giao dịch, ví dụ:
+          <br />
+          “Ngày 17/11/2025 bán 2 cái ốp lưng cho bé Sáu, giá 50k 1 cái, CCCD
+          000999”
+        </div>
+      </main>
+
+      <section class="input-area">
+        <textarea
+          id="msg"
+          placeholder="Nhập mô tả giao dịch..."
+          rows="1"
+        ></textarea>
+        <button id="sendBtn">Gửi</button>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+    <script>
+      // Đăng ký service worker
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(function (reg) {
+              console.log("SW registered", reg.scope);
+            })
+            .catch(function (err) {
+              console.log("SW registration failed", err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
