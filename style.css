@@ -1,102 +1,128 @@
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
-  background: #111;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
-    sans-serif;
-  color: #fff;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  background: #000;
 }
 
+/* App container */
 .app {
-  height: 100vh;
+  height: 100dvh;             /* QUAN TRỌNG: fix tràn màn hình iOS */
   max-width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: #111;
+  overflow: hidden;
+
+  /* NỀN GIỐNG HÌNH B */
+  background: linear-gradient(180deg, #5e005e 0%, #6c0040 40%, #3d0025 100%);
 }
 
+/* Header */
 .header {
-  background: #1f5cff;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 145, 0, 0.35); /* màu cam mờ giống hình B */
   color: white;
-  padding: 14px;
+  padding: 14px 0;
   text-align: center;
   font-size: 18px;
   font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Chat log */
 .log {
   flex: 1;
   overflow-y: auto;
-  padding: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
+/* Bubble base */
 .bubble {
   max-width: 80%;
-  padding: 10px 14px;
+  padding: 12px 16px;
   border-radius: 18px;
   font-size: 15px;
-  line-height: 1.4;
-  white-space: pre-line;
+  line-height: 1.45;
   word-wrap: break-word;
+  white-space: pre-line;
+  color: white;
+  backdrop-filter: blur(12px);
 }
 
-.bubble-ai {
-  align-self: flex-start;
-  background: #1f5cff;
-  color: #fff;
-  border-radius: 18px 18px 18px 0;
-}
-
+/* Bubble người dùng — CAM */
 .bubble-me {
   align-self: flex-end;
-  background: #444;
-  color: #fff;
+  background: linear-gradient(135deg, #ff7a22, #ff9b4b);
   border-radius: 18px 18px 0 18px;
 }
 
-.bubble-error {
-  background: #d9534f;
+/* Bubble AI — TÍM */
+.bubble-ai {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #7722ff, #8b44ff);
+  border-radius: 18px 18px 18px 0;
 }
 
+/* Error bubble */
+.bubble-error {
+  background: #d9534f !important;
+}
+
+/* Input area */
 .input-area {
   padding: 10px;
-  border-top: 1px solid #333;
-  background: #111;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
   display: flex;
   gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Input */
 textarea {
   flex: 1;
-  background: #222;
-  color: #fff;
+  height: 44px;
   border: none;
-  border-radius: 18px;
+  border-radius: 22px;
   padding: 10px 14px;
   font-size: 15px;
   resize: none;
-  height: 44px;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 textarea:focus {
   outline: none;
 }
 
+/* Send button */
 button {
-  background: #1f5cff;
+  background: linear-gradient(135deg, #ff7a22, #ff9b4b);
   color: white;
   border: none;
   padding: 0 18px;
-  border-radius: 18px;
+  border-radius: 22px;
   font-size: 15px;
+  font-weight: 600;
 }
 
 button:active {
