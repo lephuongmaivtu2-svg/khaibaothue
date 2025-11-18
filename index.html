@@ -20,6 +20,15 @@
 
     <link rel="stylesheet" href="/style.css" />
   </head>
+  
+    <script>
+      const textarea = document.getElementById("msg");
+    
+      textarea.addEventListener("input", function () {
+        this.style.height = "auto";           
+        this.style.height = (this.scrollHeight) + "px";
+      });
+    </script>
 
   <body>
     <div class="app">
