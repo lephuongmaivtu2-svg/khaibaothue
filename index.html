@@ -21,14 +21,7 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   
-    <script>
-      const textarea = document.getElementById("msg");
     
-      textarea.addEventListener("input", function () {
-        this.style.height = "auto";           
-        this.style.height = (this.scrollHeight) + "px";
-      });
-    </script>
 
   <body>
     <div class="app">
@@ -55,6 +48,16 @@
     </div>
 
     <script src="/app.js"></script>
+
+    <script>
+      const textarea = document.getElementById("msg");
+    
+      textarea.addEventListener("input", function () {
+        this.style.height = "auto";           
+        this.style.height = (this.scrollHeight) + "px";
+      });
+    </script>
+    
     <script>
       // Đăng ký service worker
       if ("serviceWorker" in navigator) {
@@ -70,5 +73,6 @@
         });
       }
     </script>
+    
   </body>
 </html>
