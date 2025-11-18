@@ -3,19 +3,20 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* ---- NỀN CHÍNH ---- */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background: #f1f2f6;         /* NỀN XÁM NHẠT NHƯ ZALO */
+  background: #f1f2f6;  /* nền xám nhạt kiểu Zalo */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
   color: #111;
 }
 
-/* APP CONTAINER */
+/* ---- APP CONTAINER: dùng 100dvh để không tràn khi mở bàn phím ---- */
 .app {
-  height: 100dvh;
+  height: 100dvh;              /* FIX iOS keyboard */
   max-width: 600px;
   margin: 0 auto;
   display: flex;
@@ -24,7 +25,7 @@ html, body {
   overflow: hidden;
 }
 
-/* HEADER: TRẮNG + BÓNG NHẸ */
+/* ---- HEADER ---- */
 .header {
   background: #ffffff;
   color: #222;
@@ -35,7 +36,7 @@ html, body {
   border-bottom: 1px solid #e3e3e3;
 }
 
-/* CHAT LOG */
+/* ---- KHU VỰC CHAT ---- */
 .log {
   flex: 1;
   overflow-y: auto;
@@ -43,9 +44,10 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  -webkit-overflow-scrolling: touch; /* scroll mượt trên iOS */
 }
 
-/* BASE BUBBLE */
+/* BUBBLE base */
 .bubble {
   max-width: 78%;
   padding: 12px 16px;
@@ -56,7 +58,7 @@ html, body {
   white-space: pre-line;
 }
 
-/* BUBBLE AI (TRẮNG, BÊN TRÁI) */
+/* BUBBLE AI (trắng, bên trái) */
 .bubble-ai {
   align-self: flex-start;
   background: #ffffff;
@@ -65,32 +67,35 @@ html, body {
   border: 1px solid #e5e5e5;
 }
 
-/* BUBBLE NGƯỜI DÙNG (XANH LAM NHẠT) — BÊN PHẢI */
+/* BUBBLE người dùng (xanh nhạt, bên phải) */
 .bubble-me {
   align-self: flex-end;
-  background: #dbeafe; /* giống Messenger xanh nhạt */
+  background: #dbeafe;          /* xanh lam nhạt kiểu Zalo/Messenger */
   color: #0f172a;
   border-radius: 14px 14px 0 14px;
   border: 1px solid #c7dfff;
 }
 
-/* ERROR BUBBLE */
+/* BUBBLE lỗi */
 .bubble-error {
   background: #fee2e2 !important;
   color: #b91c1c !important;
   border: 1px solid #fca5a5 !important;
 }
 
-/* INPUT AREA */
+/* ---- THANH NHẬP TIN ---- */
 .input-area {
   padding: 12px 14px;
   background: #ffffff;
   border-top: 1px solid #e3e3e3;
   display: flex;
   gap: 10px;
+  flex-shrink: 0;         /* KHÔNG cho bị bóp khi bàn phím hiện */
+  position: relative;
+  z-index: 10;
 }
 
-/* TEXTAREA GỬI TIN */
+/* Ô nhập */
 textarea {
   flex: 1;
   height: 42px;
@@ -109,10 +114,10 @@ textarea::placeholder {
 
 textarea:focus {
   outline: none;
-  border: 1px solid #3b82f6; /* xanh nhấn giống Zalo */
+  border: 1px solid #3b82f6; /* xanh nhấn */
 }
 
-/* SEND BUTTON */
+/* Nút Gửi */
 button {
   background: #3b82f6;
   border: none;
@@ -122,6 +127,11 @@ button {
   border-radius: 20px;
   font-size: 15px;
   height: 42px;
+}
+
+/* Chặn double-tap zoom trên iOS cho button & textarea */
+button, textarea {
+  touch-action: manipulation;
 }
 
 button:active {
