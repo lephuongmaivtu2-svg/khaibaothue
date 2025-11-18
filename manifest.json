@@ -1,5 +1,5 @@
 {
-  "name": "Lightverse – Khai báo giao dịch",
+  "name": "Sổ ghi chép mua bán",
   "short_name": "Lightverse",
   "start_url": "/",
   "scope": "/",
@@ -8,17 +8,17 @@
   "theme_color": "#1f5cff",
   "icons": [
     {
-      "src": "https://i.ibb.co/7SrxWGD/icon-180.png",
+      "src": "https://i.ibb.co/Qsj00Vc/Thi-t-k-ch-a-c-t-n-6.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "https://i.ibb.co/vk50f99/icon-192.png",
+      "src": "https://i.ibb.co/Qsj00Vc/Thi-t-k-ch-a-c-t-n-6.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://i.ibb.co/2svhHQC/icon-512.png",
+      "src": "https://i.ibb.co/Qsj00Vc/Thi-t-k-ch-a-c-t-n-6.png",
       "sizes": "512x512",
       "type": "image/png"
     }
