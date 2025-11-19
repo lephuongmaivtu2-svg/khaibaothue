@@ -8,17 +8,17 @@
   "theme_color": "#1f5cff",
   "icons": [
     {
-      "src": "https://ibb.co/cKYDBBL3",
+      "src": "/public/assets/icons/180x180.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "https://ibb.co/xtbP0t0x",
+      "src": "/public/assets/icons/192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://ibb.co/vxfq19b4",
+      "src": "/public/assets/icons/512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
