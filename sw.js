@@ -1,4 +1,4 @@
-const CACHE_NAME = "lightverse-tax-v5";
+const CACHE_NAME = "lightverse-tax-v6";
 const ASSETS = [
   "/",
   "/index.html",
