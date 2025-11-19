@@ -1,6 +1,6 @@
 {
   "name": "Sổ ghi chép mua bán",
-  "short_name": "Lightverse",
+  "short_name": "Sổ mua bán",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
